@@ -18,6 +18,10 @@ public class Prices {
         prices.put("large",0.50);
     }
 
+    public static Double getPrices(String name) {
+        return prices.get(name);
+    }
+
     public static void display() {
 
         for (Map.Entry<String,Double> entry : prices.entrySet()){
