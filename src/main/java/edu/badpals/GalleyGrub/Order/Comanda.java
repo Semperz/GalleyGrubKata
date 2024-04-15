@@ -17,5 +17,5 @@ public interface Comanda {
 
     void updateTotal(Double total);
 
-    String display();
+    void display();
 }
