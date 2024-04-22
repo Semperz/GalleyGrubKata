@@ -16,5 +16,8 @@ public class Regular extends Extra {
         if (sumaExtra.isPresent()){
             comanda.updateTotal(sumaExtra.get());
         }
+        if (nextExtra.isPresent()){
+            nextExtra.get().sumExtras(comanda);
+        }
     }
 }

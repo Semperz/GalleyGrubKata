@@ -14,8 +14,8 @@ public abstract class Extra {
     public Extra() {
     }
 
-    public void setNextExtra(Optional<Extra> nextExtra) {
-        this.nextExtra = nextExtra;
+    public void setNextExtra(Extra nextExtra) {
+        this.nextExtra = Optional.ofNullable(nextExtra);
     }
     public abstract void sumExtras(Comanda comanda);
 }

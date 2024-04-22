@@ -13,7 +13,7 @@ public class CheeseExtra extends Extra {
     public void sumExtras(Comanda comanda) {
         int numCheese = 0;
         for (Item item : comanda.itemList()){
-            if (item.extra() == CHEESE){
+            if (item.extra().equals(CHEESE)){
                 numCheese++;
             }else{
                 ;
@@ -21,5 +21,8 @@ public class CheeseExtra extends Extra {
         }
         Double cheeseCost = numCheese * CHEESE_PRICE;
         comanda.updateTotal(cheeseCost);
+        if (nextExtra.isPresent()){
+            nextExtra.get().sumExtras(comanda);
+        }
     }
 }

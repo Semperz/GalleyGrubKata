@@ -29,16 +29,26 @@ public class Receipt implements Ticket {
 
     @Override
     public Double total() {
-        return null;
+        sumExtraCharge();
+        this.total = order.getTotal();
+        return total;
     }
 
     @Override
     public void sumExtraCharge() {
+        if(!(this.firstExtra == null)) {
+            firstExtra.sumExtras(this.order);
+        }
 
     }
 
     @Override
     public void print() {
-
+        order.display();
+        StringBuilder sb = new StringBuilder();
+        sb.append('\t')
+                .append("TOTAL --------> ")
+                .append(total + "$");
+        System.out.println(sb);
     }
 }

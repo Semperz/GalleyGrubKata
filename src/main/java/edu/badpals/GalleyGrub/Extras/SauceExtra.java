@@ -13,7 +13,7 @@ public class SauceExtra extends Extra {
     public void sumExtras(Comanda comanda) {
         int numSauce = 0;
         for (Item item : comanda.itemList()){
-            if (item.extra() == SAUCE){
+            if (item.extra().equals(SAUCE)){
                 numSauce++;
             }else{
                 ;
@@ -21,5 +21,8 @@ public class SauceExtra extends Extra {
         }
         Double sauceCost = numSauce * SAUCE_PRICE;
         comanda.updateTotal(sauceCost);
+        if (nextExtra.isPresent()){
+            nextExtra.get().sumExtras(comanda);
+        }
     }
 }

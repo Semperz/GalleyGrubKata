@@ -1,10 +1,17 @@
 package edu.badpals.GalleyGrub;
 
+import edu.badpals.GalleyGrub.Extras.CheeseExtra;
+import edu.badpals.GalleyGrub.Extras.Regular;
+import edu.badpals.GalleyGrub.Extras.SauceExtra;
+import edu.badpals.GalleyGrub.Extras.SizeLargeExtra;
 import edu.badpals.GalleyGrub.Items.Item;
 import edu.badpals.GalleyGrub.Items.Prices;
 import edu.badpals.GalleyGrub.Items.Product;
 import edu.badpals.GalleyGrub.Order.Comanda;
 import edu.badpals.GalleyGrub.Order.Order;
+import edu.badpals.GalleyGrub.Extras.Extra;
+import edu.badpals.GalleyGrub.Receipt.Receipt;
+import edu.badpals.GalleyGrub.Receipt.Ticket;
 
 public class galleygrub
 {
@@ -100,10 +107,10 @@ public class galleygrub
          * y lo muestra en pantalla.
          */
 
-        /*Ticket receipt = new Receipt(order);
+        Ticket receipt = new Receipt(order);
         receipt.total();
         receipt.print();
-*/
+
         /**
          * Eugene H. Krabs quiere obtener un margen
          * de beneficio extra y decide cargar
@@ -119,7 +126,7 @@ public class galleygrub
          * pues eso lo haremos con otro componente.
          */
 
-        /*System.out.print("\n\t --- GALLEY GRUB ---  \n");
+        System.out.print("\n\t --- GALLEY GRUB ---  \n");
 
         patty = new Item("Krabby Patty", 1.25, "cheese");
         display(patty);
@@ -130,7 +137,7 @@ public class galleygrub
         loaf = new Item("Golden Loaf", 2.00, "sauce");
         display(loaf);
         soda = new Item("Seafoam Soda", 1.00, "large");
-        display(soda);*/
+        display(soda);
 
         /**
          * Buble Fish sigue zampando
@@ -138,7 +145,7 @@ public class galleygrub
          * de extras.
          */
 
-        /*order = new Order();
+        order = new Order();
 
         order.addItem("Krabby Patty", 1.25, "cheese");
         order.addItem("Coral Bits", 1.00);
@@ -149,7 +156,7 @@ public class galleygrub
 
         // Utiliza el diccionario Prices para incluir
         // el precio de los extras en la salida por consola.
-        order.display();*/
+        order.display();
 
 
         /**
@@ -170,14 +177,14 @@ public class galleygrub
          * El precio total de la comanda se guarda en Order.
          */
 
-        /*Extra regular = new Regular(); // suma el precio base
+        Extra regular = new Regular(); // suma el precio base
         Extra cheese = new CheeseExtra(); // suma el precio del extra cheese
         Extra sauce = new SauceExtra(); // suma el precio de sauce
         Extra size = new SizeLargeExtra(); // suma el precio del tamanho Large
 
         regular.setNextExtra(cheese);
         cheese.setNextExtra(sauce);
-        sauce.setNextExtra(size);*/
+        sauce.setNextExtra(size);
 
         /**
          * Squidward Tentacles genera el recibo,
@@ -185,13 +192,12 @@ public class galleygrub
          * y lo muestra en pantalla.
          */
 
-        /*System.out.print("\n\t --- PRINTIG RECEIPT BIPBIPBIP ---  \n");
+        System.out.print("\n\t --- PRINTIG RECEIPT BIPBIPBIP ---  \n");
 
         Ticket receiptExtra = new Receipt(order);
         receiptExtra.setChain(regular);
-
         receiptExtra.total();
-        receiptExtra.print();*/
+        receiptExtra.print();
     }
 
     public static void display(Product item) {

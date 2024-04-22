@@ -14,7 +14,7 @@ public class SizeLargeExtra extends Extra {
     public void sumExtras(Comanda comanda) {
         int numSizeLarge = 0;
         for (Item item : comanda.itemList()){
-            if (item.extra() == SIZE_LARGE){
+            if (item.extra().equals(SIZE_LARGE)){
                 numSizeLarge++;
             }else{
                 ;
@@ -22,5 +22,8 @@ public class SizeLargeExtra extends Extra {
         }
         Double sizeLargeCost = numSizeLarge * SIZE_PRICE;
         comanda.updateTotal(sizeLargeCost);
+        if (nextExtra.isPresent()){
+            nextExtra.get().sumExtras(comanda);
+        }
     }
 }
